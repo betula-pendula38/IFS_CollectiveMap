@@ -1,0 +1,62 @@
+
+/* this is to remove the default padding(little white border around divs added by the browser */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* here we define our divs */
+#map {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#welcome-hiding-container {
+    background-color: rgba(94, 255, 0, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+
+#welcome-container {
+   
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid #73AD21;
+}
+
+
+
+/* here we define our class */
+
+
+.inner {
+    position: absolute;
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted rgb(96 139 168);
+}
+  
+.box-div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgb(96 139 168);
+    border-radius: 5px;
+    background-color: rgb(96 139 168 / 0.2);
+    font-size: 500px;
+    margin: auto;
+    width: 50%;
+
+}
