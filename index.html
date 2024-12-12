@@ -5,24 +5,17 @@
         <!-- link css file to this html file -->
         <link rel="stylesheet" href="main.css"/>
         
-        <!-- creating flexcontainers -->
-        <style>
-            .flex-container {
-              display: flex ;
-              background-color: rgba(128, 128, 128, 0.473);
-              padding: 50px;
-              align-items: center;
-              justify-content: center;
-              width: 100%;
-              height: 100%;
-            }
-  
-            .flex-container > div {
-              background-color: green;
-              padding: 50px;
-              font-size: 30px;
-            }
-        </style>
+        <!-- link LEAFLET css file to this html file -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        
+        <!-- link LEAFLET javascript file to this html file -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+       
 
         
 
@@ -37,6 +30,7 @@
         <!-- class is a "category" reffering to the css file -->
         <!-- this is like the layertree in photoshop, with the first div being the top most layer -->
 
+<!-- 
         <div class="flex-container">
             <div id="welcome-container" class="box-div">
                 WELCOME
@@ -56,8 +50,61 @@
 
         <button.onclick>
         </button.onclick>
-        
+-->
 
+        <!-- LEAFLET MAP: div is a container for the Map on the website -->
+        
+        <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag 
+        leaflet-touch-zoom" tabindex="0" style="position: relative;">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-51px, 0px, 0px);">
+          <div class="leaflet-pane leaflet-tile-pane">
+
+          </div>
+          <div class="leaflet-pane leaflet-overlay-pane">
+            <img class="leaflet-image-layer leaflet-zoom-animated" src="uqm_map_full.png" alt="" style="z-index: 1; transform: translate3d(-200px, -300px, 0px); width: 1000px; height: 1000px;">
+          </div>
+          <div class="leaflet-pane leaflet-shadow-pane">
+          </div>
+          <div class="leaflet-pane leaflet-marker-pane">
+          </div>
+          <div class="leaflet-pane leaflet-tooltip-pane">
+          </div>
+          <div class="leaflet-pane leaflet-popup-pane">
+          </div>
+          <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(500px, -500px, 0px) scale(0.5);">
+          </div>
+          </div>
+          <div class="leaflet-control-container">
+          <div class="leaflet-top leaflet-left">
+          <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+          <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false">
+          <span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="true"><span aria-hidden="true">
+
+          </span></a></div></div><div class="leaflet-top leaflet-right">
+                  </div><div class="leaflet-bottom leaflet-left"></div>
+                  <div class="leaflet-bottom leaflet-right">
+                    <div class="leaflet-control-attribution leaflet-control">
+                     <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">
+                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag">
+                     <path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z">
+                  </path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a></div>
+               </div>
+            </div>
+         </div>
+         
+      <!-- Javascript for leaflet -->    
+      <script>
+
+        const map = L.map('map', {
+          crs: L.CRS.Simple
+        });
+
+        const bounds = [[0, 0], [1000, 1000]];
+        const image = L.imageOverlay('uqm_map_full.png', bounds).addTo(map);
+
+        map.fitBounds(bounds);
+
+      </script>
 
     </body>
 
