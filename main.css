@@ -81,3 +81,17 @@
       padding: 50px;
       font-size: 30px;
     }
+
+
+
+    .scale {
+
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        z-index: 100;
+        left: 100px;
+
+
+
+    }

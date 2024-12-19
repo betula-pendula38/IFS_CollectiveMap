@@ -1,117 +1,54 @@
+<html lang="en"><head>
+	<link rel="stylesheet" href="main.css"/>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>CRS.Simple example - Leaflet</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico">
 
-<html>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js" crossorigin=""> </script>
+    
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 100%;
+			width:  100%;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
 
-    <!-- head, setting up links, atrributes, information -->
-    <head>
-        <!-- link css file to this html file -->
-        <link rel="stylesheet" href="main.css"/>
-        
-        <!-- link LEAFLET css file to this html file -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""/>
-        
-        <!-- link LEAFLET javascript file to this html file -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""></script>
+	
+</head>
+<body>
+	<div class="scale" id="scale_10"> class
+		10m
+	
+	</div>
 
-       
-
-        
-
-    </head>
-
-
-    <!-- body, all the creation of our websites happens here -->
-    <body>
-       
-        <!-- div is a container "box" on the website -->
-        <!-- id is giving a div a specific name -->
-        <!-- class is a "category" reffering to the css file -->
-        <!-- this is like the layertree in photoshop, with the first div being the top most layer -->
-
-<!-- 
-        <div class="flex-container">
-            <div id="welcome-container" class="box-div">
-                WELCOME
-            </div>
-             
-          </div>
-
-        <div id="map" class="inner">
-        </div>
-        
-        <div id="welcome-hiding-container" class="inner"> 
-        </div>
-        
-
-        <div id="welcome-container" class="inner">
-        </div>
-
-        <button.onclick>
-        </button.onclick>
--->
-
-        <!-- LEAFLET MAP: div is a container for the Map on the website -->
-        
-        <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag 
-        leaflet-touch-zoom" tabindex="0" style="position: relative;">
-        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-51px, 0px, 0px);">
-          <div class="leaflet-pane leaflet-tile-pane">
-
-          </div>
-          <div class="leaflet-pane leaflet-overlay-pane">
-            <img class="leaflet-image-layer leaflet-zoom-animated" src="uqm_map_full.png" alt="" style="z-index: 1; transform: translate3d(-200px, -300px, 0px); width: 1000px; height: 1000px;">
-          </div>
-          <div class="leaflet-pane leaflet-shadow-pane">
-          </div>
-          <div class="leaflet-pane leaflet-marker-pane">
-          </div>
-          <div class="leaflet-pane leaflet-tooltip-pane">
-          </div>
-          <div class="leaflet-pane leaflet-popup-pane">
-          </div>
-          <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(500px, -500px, 0px) scale(0.5);">
-          </div>
-          </div>
-          <div class="leaflet-control-container">
-          <div class="leaflet-top leaflet-left">
-          <div class="leaflet-control-zoom leaflet-bar leaflet-control">
-          <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false">
-          <span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out leaflet-disabled" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="true"><span aria-hidden="true">
-
-          </span></a></div></div><div class="leaflet-top leaflet-right">
-                  </div><div class="leaflet-bottom leaflet-left"></div>
-                  <div class="leaflet-bottom leaflet-right">
-                    <div class="leaflet-control-attribution leaflet-control">
-                     <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">
-                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag">
-                     <path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z">
-                  </path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a></div>
-               </div>
-            </div>
-         </div>
-         
-      <!-- Javascript for leaflet -->    
-      <script>
-
-        const map = L.map('map', {
-          crs: L.CRS.Simple
-        });
-
-        const bounds = [[0, 0], [1000, 1000]];
-        const image = L.imageOverlay('uqm_map_full.png', bounds).addTo(map);
-
-        map.fitBounds(bounds);
-
-      </script>
-
-    </body>
+<div id="map" class="leaflet-container" > 
+</div>
 
 
-</html>
+
+<script src="map.js">
 
 
+
+</script>
+
+
+
+
+
+</body></html>
 
 
